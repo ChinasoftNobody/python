@@ -6,6 +6,8 @@ import tkinter as tk
 MENU_SIZE = 800, 600
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_DIR = os.path.join(BASE_DIR, "logs")
+if not os.path.exists(LOG_DIR):
+        os.makedirs(LOG_DIR)  # 创建路径
 LOG_FILE = datetime.datetime.now().strftime("%Y-%m-%d") + ".log"
 
 
