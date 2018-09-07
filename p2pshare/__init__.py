@@ -5,6 +5,7 @@ from threading import Thread
 from xmlrpc.client import ServerProxy
 from xmlrpc.server import SimpleXMLRPCServer
 
+DEFAULT_PORT = 4242
 OK = 0
 FAIL = -1
 WINDOW_SIZE = 800, 600
@@ -86,6 +87,20 @@ class Node:
         :param port: 本机端口
         :param target: 目标机器
         :return: 结果
+        """
+        pass
+
+    def start_server(self) -> tuple:
+        """
+        启动服务监听
+        :return:结果信息
+        """
+        pass
+
+    def stop_server(self) -> tuple:
+        """
+        停止服务监听
+        :return:结果
         """
         pass
 
