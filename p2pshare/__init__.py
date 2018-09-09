@@ -6,6 +6,8 @@ from xmlrpc.client import ServerProxy
 from xmlrpc.server import SimpleXMLRPCServer
 
 DEFAULT_PORT = 4242
+DEFAULT_PATH = 'd:\\'
+DEFAULT_TARGET = 'http://localhost:4242'
 OK = 0
 FAIL = -1
 WINDOW_SIZE = 800, 600
@@ -66,14 +68,14 @@ logging.config.dictConfig(LOGGING)
 
 class Node:
 
-    def list_files(self, sub_path=''):
+    def list_files(self, sub_path='') -> tuple:
         """
         查询当前节点文件列表，包含目录及文件
         :return: 结果信息
         """
         pass
 
-    def register(self, node):
+    def register(self, node) -> tuple:
         """
         新节点注册发现，node为非己方节点
         :param node: 非己方节点
@@ -81,12 +83,20 @@ class Node:
         """
         pass
 
-    def configure(self, port, target):
+    def configure(self, port, target, path) -> tuple:
         """
         匹配基本信息
         :param port: 本机端口
         :param target: 目标机器
+        :param path: 本机共享目录地址
         :return: 结果
+        """
+        pass
+
+    def connect_to_target(self) -> tuple:
+        """
+        连接目标机器
+        :return: 操作结果
         """
         pass
 
